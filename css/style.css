@@ -18,22 +18,26 @@ body{
     margin: 0 auto;
 }
 
-header{
+body > *{
+    display: grid;
+}
+
+header > div{
     padding: 13px 204px 33px;
     box-sizing: border-box;
 }
 
-header img.logo{
+header > div img.logo{
     float: left;
-    padding-top: 20px;
+    padding: 20px 0 22px;
 }
 
-header aside{
+header > div aside{
     float: right;
     margin-bottom: 10px;
 }
 
-header aside > *{
+header > div aside > *{
     display: inline-block;
     padding: 20px 0 20px 70px;
     background-repeat: no-repeat;
@@ -41,23 +45,23 @@ header aside > *{
     background-size: 51px 51px;
 }
 
-header aside > *:not(:first-child){
+header > div aside > *:not(:first-child){
     margin-left: 45px;
 }
 
-header aside .time{
+header > div aside .time{
     background-image: url(../img/time.png);
 }
 
-header aside .mail{
+header > div aside .mail{
     background-image: url(../img/mail.png);
 }
 
-header aside .phone{
+header > div aside .phone{
     background-image: url(../img/phone.png);
 }
 
-header aside p, header aside span{
+header > div aside p, header aside span{
     color: #6a6a6a;
     font-family: "Open Sans";
     font-size: 15px;
@@ -65,11 +69,11 @@ header aside p, header aside span{
     line-height: 22px;
 }
 
-header aside p{
+header > div aside p{
     font-weight: 700;
 }
 
-header hr{
+header > div hr{
     width: calc(100% - 14px);
     height: 2px;
     background-color: #c2c2c2;
@@ -77,16 +81,16 @@ header hr{
     margin: 0 auto 33px;
 }
 
-header nav ul{
+header > div nav ul{
     list-style-type: none;
     float: left;
 }
 
-header nav ul li{
+header > div nav ul li{
     display: inline-block;
 }
 
-header nav ul li a{
+header > div nav ul li a{
     color: #6c6c6c;
     font-family: "Open Sans";
     font-size: 20px;
@@ -95,12 +99,12 @@ header nav ul li a{
     padding: 0 11px;
 }
 
-header nav ul li.active a,
-header nav ul li:hover a{
+header > div nav ul li.active a,
+header > div nav ul li:hover a{
     color: #262626;
 }
 
-header .socials{
+header > div .socials{
     float: right;
     background-image: url(../img/socials.png);
     width: 213px;
@@ -111,10 +115,14 @@ header .socials{
 
 
 .banner{
+    background: #cbd3e6;
+}
+
+.banner > div{
     width: 1600px;
     height: 640px;
     margin: 0 auto;
-    background-image: url('../img/banner.jpg'), radial-gradient(circle at 525px 50%, rgba(255,255,255,1), rgba(255,255,255,0) 65%);
+    background-image: url('../img/banner.jpg'), radial-gradient(circle at 525px 50%, rgba(255,255,255,.74) 20%, rgba(255,255,255,0) 45%);
     background-size: cover;
     background-blend-mode: hard-light;
     
@@ -125,12 +133,12 @@ header .socials{
 }
 
 
-.banner article {
+.banner > div article {
     width: 530px;
     text-align: center;
 }
 
-.banner article h2{
+.banner > div article h2{
     color: #474747;
     font-family: Montserrat;
     font-size: 46px;
@@ -139,7 +147,7 @@ header .socials{
     margin-bottom: 37px;
 }
 
-.banner article p{
+.banner > div article p{
     color: #3f3f3f;
     font-family: "Open Sans";
     font-size: 17px;
@@ -148,7 +156,7 @@ header .socials{
     margin-bottom: 42px;
 }
 
-.banner article a{
+.banner > div article a{
     box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
     background-color: #1a9bdc;
     border-radius: 27px;
@@ -162,7 +170,7 @@ header .socials{
     text-decoration: none;
 }
 
-.banner .minilogo{
+.banner > div .minilogo{
     position: absolute;
     width: 125px;
     height: 25px;
@@ -173,12 +181,18 @@ header .socials{
 
 
 .cathegories{
-    display: grid;
-    grid-template-rows: minmax(360px, auto);
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: -webkit-linear-gradient(left, #43b1d2, #43b1d2 50%, #37c3a8 50%, #37c3a8);
+    background: -o-linear-gradient(left, #43b1d2, #43b1d2 50%, #37c3a8 50%, #37c3a8);
+    background: linear-gradient(to right, #43b1d2, #43b1d2 50%, #37c3a8 50%, #37c3a8);
 }
 
-.cathegories > article{
+.cathegories > div{
+    display: grid;
+    grid-template-rows: minmax(360px, auto);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cathegories > div > article{
     padding: 170px 75px 0;
     box-sizing: border-box;
     background-color: #43b1d2;
@@ -187,7 +201,7 @@ header .socials{
     background-position: center 75px;
 }
 
-.cathegories > article h3{
+.cathegories > div > article h3{
     color: #ffffff;
     font-family: Montserrat;
     font-size: 30px;
@@ -196,7 +210,7 @@ header .socials{
     margin-bottom: 15px;
 }
 
-.cathegories > article p{
+.cathegories > div > article p{
     color: #ffffff;
     font-family: "Open Sans";
     font-size: 15px;
@@ -204,45 +218,45 @@ header .socials{
     line-height: 30px;
 }
 
-.cathegories > article.cath_1{
+.cathegories > div > article.cath_1{
     background-color: #43b1d2;
     background-image: url(../img/cath_1.png);
 }
 
-.cathegories > article.cath_2{
+.cathegories > div > article.cath_2{
     background-color: #3fb6c6;
     background-image: url(../img/cath_2.png);
 }
 
-.cathegories > article.cath_3{
+.cathegories > div > article.cath_3{
     background-color: #3cbbbb;
     background-image: url(../img/cath_3.png);
 }
 
-.cathegories > article.cath_4{
+.cathegories > div > article.cath_4{
     background-color: #37c3a8;
     background-image: url(../img/cath_4.png);
 }
 
 
 
-.reasons{
+.reasons > div{
     display: grid;
     width: 1200px;
     grid-template-columns: repeat(3, 340px);
     grid-template-rows: repeat(3, 300px);
-    grid-column-gap: 45px;
+    grid-column-gap: calc(50% - 510px);
     margin: 0 auto;
 }
 
-.reasons article:first-child{
+.reasons > div article:first-child{
     grid-column-start: 1;
     grid-column-end: 4;
     padding-top: 110px;
     text-align: center;
 }
 
-.reasons article:first-child h2{
+.reasons > div article:first-child h2{
     color: #494949;
     font-family: Montserrat;
     font-size: 45px;
@@ -250,7 +264,7 @@ header .socials{
     margin-bottom: 31px;
 }
 
-.reasons article:first-child p{
+.reasons > div article:first-child p{
     width: 880px;
     color: #6a6a6a;
     font-family: "Open Sans";
@@ -260,11 +274,11 @@ header .socials{
     margin: 0 auto;
 }
 
-.reasons article:not(:first-child){
+.reasons > div article:not(:first-child){
     padding: 50px 0;
 }
 
-.reasons article h3{
+.reasons > div article h3{
     color: #6f6f6e;
     font-family: Montserrat;
     font-size: 30px;
@@ -276,7 +290,7 @@ header .socials{
     background-position: left center;
 }
 
-.reasons article p{
+.reasons > div article p{
     color: #6a6a6a;
     font-family: "Open Sans";
     font-size: 15px;
@@ -284,7 +298,7 @@ header .socials{
     line-height: 30px;
 }
 
-.reasons div{
+.reasons > div div{
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -294,36 +308,42 @@ header .socials{
     background-size: cover;
 }
 
-.reasons article.reason_1 h3{
+.reasons > div article.reason_1 h3{
     background-image: url(../img/reason_1.png);
 }
 
-.reasons article.reason_2 h3{
+.reasons > div article.reason_2 h3{
     background-image: url(../img/reason_2.png);
 }
 
-.reasons article.reason_3 h3{
+.reasons > div article.reason_3 h3{
     background-image: url(../img/reason_3.png);
 }
 
-.reasons article.reason_4 h3{
+.reasons > div article.reason_4 h3{
     background-image: url(../img/reason_4.png);
 }
 
 
 
 .rates{
-    padding: 155px 250px;
-    box-sizing: border-box;
     background: url(../img/rates_bg.png), #0081b9;
     background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.rates > div{
+    padding: 155px 250px;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(4, 165px);
     grid-template-rows: 280px;
     grid-column-gap: 160px;
 }
 
-.rates article{
+.rates > div article{
     padding-top: 125px;
     text-align: center;
     box-sizing: border-box;
@@ -331,7 +351,7 @@ header .socials{
     background-repeat: no-repeat;
 }
 
-.rates article h3{
+.rates > div article h3{
     color: #ffffff;
     font-family: Montserrat;
     font-size: 60px;
@@ -339,14 +359,14 @@ header .socials{
     letter-spacing: -1.19px;
 }
 
-.rates article hr{
+.rates > div article hr{
     width: 84px;
     height: 6px;
     margin: 26px auto;
     background-color: #fff;
 }
 
-.rates article p{
+.rates > div article p{
     color: #ffffff;
     font-family: Montserrat;
     font-size: 25px;
@@ -354,26 +374,26 @@ header .socials{
     letter-spacing: -1.52px;
 }
 
-.rates article.rates_1{
+.rates > div article.rates_1{
     background-image: url(../img/rates_1.png);
 }
 
-.rates article.rates_2{
+.rates > div article.rates_2{
     background-image: url(../img/rates_2.png);
 }
 
-.rates article.rates_3{
+.rates > div article.rates_3{
     background-image: url(../img/rates_3.png);
 }
 
-.rates article.rates_4{
+.rates > div article.rates_4{
     background-image: url(../img/rates_4.png);
 }
 
 
 
 
-.news{
+.news > div{
     display: grid;
     grid-template-columns: repeat(2, 335px) 425px;
     grid-template-rows: minmax(175px, auto) minmax(420px, auto);
@@ -384,12 +404,12 @@ header .socials{
     padding: 100px;
 }
 
-.news article:first-child{
+.news > div article:first-child{
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
-.news article h3{
+.news > div article h3{
     color: #494949;
     font-family: Montserrat;
     font-size: 45px;
@@ -397,7 +417,7 @@ header .socials{
     margin-bottom: 38px;
 }
 
-.news article p{
+.news > div article p{
     color: #6a6a6a;
     font-family: "Open Sans";
     font-size: 15px;
@@ -405,12 +425,12 @@ header .socials{
     line-height: 30px;
 }
 
-.news article:nth-child(2),
-.news > div.list{
+.news > div article:nth-child(2),
+.news > div > div.list{
     padding-left: 20px;
 }
 
-.news > div:not(:nth-child(6)) h4 {
+.news > div > div:not(:nth-child(6)) h4 {
     margin: 35px 0 15px;
     color: #6f6f6e;
     font-family: Montserrat;
@@ -419,7 +439,7 @@ header .socials{
     letter-spacing: -1.21px;
 }
 
-.news > div:not(:nth-child(6)) span{
+.news > div > div:not(:nth-child(6)) span{
     color: #0087be;
     font-family: Montserrat;
     font-size: 15px;
@@ -427,7 +447,7 @@ header .socials{
     letter-spacing: -0.38px;
 }
 
-.news > div:not(:nth-child(6)) p{
+.news > div > div:not(:nth-child(6)) p{
     color: #6a6a6a;
     font-family: "Open Sans";
     font-size: 15px;
@@ -436,13 +456,13 @@ header .socials{
     margin-top: 25px;
 }
 
-.news > div:last-child{
+.news > div > div:last-child{
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
 }
 
-.news > div > a.button{
+.news > div > div > a.button{
     box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
     background-color: #0087be;
     padding: 15px 26px;
@@ -456,7 +476,7 @@ header .socials{
     text-decoration: none;
 }
 
-.news .list .header{
+.news > div .list .header{
     width: 420px;
     height: 52px;
     padding: 13px 65px;
@@ -472,7 +492,7 @@ header .socials{
     cursor: pointer;
 }
 
-.news .list .header:before{
+.news > div .list .header:before{
     content: '►';
     position: absolute;
     left: 6px;
@@ -487,12 +507,12 @@ header .socials{
     box-sizing: border-box;
 }
 
-.news .list .header.active{
+.news > div .list .header.active{
     background: #0087be;
     color: #fff;
 }
 
-.news .list p{
+.news > div .list p{
     margin: 20px 0 40px;
     color: #6a6a6a;
     font-family: "Open Sans";
@@ -504,24 +524,32 @@ header .socials{
 
 
 .gallery{
-    padding: 94px 250px;
+    background: url(../img/gallery_bg.png), #2fb39b;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.gallery > div{
+    padding: 94px calc(50% - 550px);
     width: 1100px;
     display: grid;
     grid-template-columns: repeat(3, 344px);
     grid-template-rows: repeat(3, 209px);
     grid-column-gap: 34px;
     grid-row-gap: 38px;
-    background: url(../img/gallery_bg.png), #2fb39b;
-    background-blend-mode: multiply;
+    /*background: url(../img/gallery_bg.png), #2fb39b;
+    background-blend-mode: multiply;*/
 }
 
-.gallery div{
+.gallery > div div{
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
 }
 
-.gallery div h3{
+.gallery > div div h3{
     color: #ffffff;
     font-family: Montserrat;
     font-size: 45px;
@@ -529,7 +557,7 @@ header .socials{
     margin-bottom: 38px;
 }
 
-.gallery div p{
+.gallery > div div p{
     color: #ffffff;
     font-family: "Open Sans";
     font-size: 15px;
@@ -538,7 +566,7 @@ header .socials{
 }
 
 
-.team{
+.team > div{
     padding: 150px 0 135px;
     width: 1200px;
     display: grid;
@@ -549,16 +577,16 @@ header .socials{
     margin: 0 auto;
 }
 
-.team article{
+.team > div article{
     text-align: center;
 }
 
-.team article:first-child{
+.team > div article:first-child{
     grid-column-start: 1;
     grid-column-end: 5;
 }
 
-.team article:first-child h3{
+.team > div article:first-child h3{
     color: #494949;
     font-family: Montserrat;
     font-size: 45px;
@@ -566,7 +594,7 @@ header .socials{
     margin-bottom: 50px;
 }
 
-.team article:first-child p{
+.team > div article:first-child p{
     color: #6a6a6a;
     font-family: "Open Sans";
     font-size: 16px;
@@ -574,11 +602,11 @@ header .socials{
     line-height: 30px;
 }
 
-.team article img{
+.team > div article img{
     border-radius: 50%;
 }
 
-.team article:not(:first-child) h4{
+.team > div article:not(:first-child) h4{
     color: #6f6f6e;
     font-family: Montserrat;
     font-size: 25px;
@@ -586,7 +614,7 @@ header .socials{
     margin-top: 29px;
 }
 
-.team article:not(:first-child) p{
+.team > div article:not(:first-child) p{
     color: #6f6f6e;
     font-family: Montserrat;
     font-size: 18px;
@@ -595,7 +623,7 @@ header .socials{
     margin: 15px 0 32px;
 }
 
-.team article:not(:first-child) .contacts{
+.team > div article:not(:first-child) .contacts{
     width: 109px;
     height: 24px;
     display: block;
@@ -606,11 +634,15 @@ header .socials{
 
 
 .offer{
+    background: #e2e2e2;
+}
+
+.offer > div{
     padding: 80px 215px 65px;
     background-color: #e2e2e2;
 }
 
-.offer p{
+.offer > div p{
     float: left;
     color: #494949;
     font-family: Montserrat;
@@ -618,7 +650,7 @@ header .socials{
     font-weight: 700;
 }
 
-.offer a{
+.offer > div a{
     float: right;
     box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
     background-color: #0087be;
@@ -636,13 +668,17 @@ header .socials{
 
 
 footer{
-    padding: 116px 180px 108px;
+    background: #171717;
+}
+
+footer > div{
+    padding: 116px calc(20px + 50% - 580px) 108px;
     background: #171717;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-footer article h4{
+footer > div article h4{
     color: #ffffff;
     font-family: "Open Sans";
     font-size: 22px;
@@ -652,11 +688,11 @@ footer article h4{
     margin-bottom: 70px;
 }
 
-footer article ul{
+footer > div article ul{
     list-style-type: none;
 }
 
-footer article:first-child ul li a{
+footer > div article:first-child ul li a{
     opacity: 0.51;
     color: #ffffff;
     font-family: "Open Sans";
@@ -666,16 +702,16 @@ footer article:first-child ul li a{
     text-decoration: none;
 }
 
-footer article:first-child ul{
+footer > div article:first-child ul{
     margin-left: 70px;
 }
 
-footer article:first-child ul li{
+footer > div article:first-child ul li{
     margin-bottom: 51px;
     position: relative;
 }
 
-footer article:first-child ul li:before{
+footer > div article:first-child ul li:before{
     content: '';
     position: absolute;
     left: -70px;
@@ -683,32 +719,32 @@ footer article:first-child ul li:before{
     display: block;
 }
 
-footer article:first-child ul li.mail:before{
+footer > div article:first-child ul li.mail:before{
     background-image: url(../img/footer_mail.png);
     width: 40px;
     height: 31px;
 }
 
-footer article:first-child ul li.phone:before{
+footer > div article:first-child ul li.phone:before{
     background-image: url(../img/footer_phone.png);
     width: 27px;
     height: 40px;
 }
 
-footer article:first-child ul li.address:before{
+footer > div article:first-child ul li.address:before{
     background-image: url(../img/footer_map.png);
     width: 38px;
     height: 40px;
 }
 
-footer article:first-child .socials{
+footer > div article:first-child .socials{
     width: 237px;
     height: 26px;
     background: url(../img/footer_socials.png);
     margin-left: 5px;
 }
 
-footer article:not(:first-child) ul li a{
+footer > div article:not(:first-child) ul li a{
     opacity: 0.51;
     color: #ffffff;
     font-family: "Open Sans";
@@ -720,19 +756,19 @@ footer article:not(:first-child) ul li a{
     position: relative;
 }
 
-footer article:not(:first-child) ul li a:before{
+footer > div article:not(:first-child) ul li a:before{
     content: '►';
     position: absolute;
     color: #0087be;
     left: 3px;
 }
 
-footer article:not(:first-child) ul li{
+footer > div article:not(:first-child) ul li{
     margin: 10px 0;
 }
 
-footer form input:not([type="submit"]),
-footer form textarea{
+footer > div form input:not([type="submit"]),
+footer > div form textarea{
     background: transparent;
     border: 0;
     opacity: 0.51;
@@ -747,16 +783,16 @@ footer form textarea{
     padding-bottom: 10px;
 }
 
-footer form textarea{
+footer > div form textarea{
     height: 90px;
     resize: none;
 }
 
-footer form input:not([type="submit"]){
+footer > div form input:not([type="submit"]){
     height: 32px;
 }
 
-footer form [type="submit"]{
+footer > div form [type="submit"]{
     margin-top: 24px;
     box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
     background-color: #0087be;
@@ -772,6 +808,10 @@ footer form [type="submit"]{
 }
 
 .copyright{
+    background-color: #1a1a1a;
+}
+
+.copyright > div{
     padding: 55px 0;
     text-align: center;
     color: #615555;
@@ -781,4 +821,386 @@ footer form [type="submit"]{
     line-height: 24px;
     letter-spacing: 0.33px;
     background-color: #1a1a1a;
+}
+
+
+@media all and (max-width: 1200px){
+    body > *:before,
+    body > *:after{
+        content: '';
+    }
+    
+    body > *{
+        grid-template-columns: calc(50% - 400px) 800px;
+    }
+    
+    header > div{
+        padding: 13px 4px 33px;
+        text-align: center;
+    }
+    
+    header > div nav ul,
+    header > div img.logo{
+        float: none;
+    }
+    
+    header > div aside,
+    header > div .socials{ 
+        display: none; 
+    }
+    
+    .banner > div {
+        width: 800px;
+        height: 640px;
+        margin: 0 auto;
+        background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,.74) 50%, rgba(255,255,255,0) 80%);
+        background-size: cover;
+        background-blend-mode: hard-light;
+        padding: 180px 0px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+    .banner > div article{
+        margin: 0 auto;
+    }
+    
+    .banner > div img{
+        display: none;
+    }
+    
+    .cathegories {
+        background: -webkit-linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+        background: -o-linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+        background: linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+    }
+    
+    .cathegories > div > article{
+        padding: 170px 75px 40px;
+    }
+    
+    .cathegories > div{
+        grid-template-rows: repeat(2, minmax(360px, auto));
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .reasons > div {
+        display: grid;
+        width: 800px;
+        grid-template-columns: repeat(2, 340px);
+        grid-template-rows: repeat(3, minmax(300px, auto));
+        grid-column-gap: calc(50% - 280px);
+        margin: 0 auto;
+    }
+    
+    .reasons > div article h3 {
+        padding: 95px 0 25px;
+        background-position: center top;
+        text-align: center;
+    }
+    
+    .reasons > div article p {
+        text-align: center;
+    }
+    
+    .reasons > div article:first-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    .reasons > div article:first-child p {
+        width: auto;
+    }
+    
+    .reasons > div  > div{
+        display: none;
+    }
+    
+    .rates > div {
+        grid-template-columns: repeat(2, 365px);
+        grid-template-rows: repeat(2, 280px);
+        grid-column-gap: calc(100% - 730px);
+        grid-row-gap: 130px;
+        padding: 155px calc(10px + 50% - 390px);
+    }
+    
+    .team > div {
+        padding: 150px 0 135px;
+        width: 800px;
+        display: grid;
+        grid-template-columns: 77.5px repeat(2, 279px) 77.5px;
+        grid-template-rows: minmax(135px, auto) minmax(425px, auto);
+        grid-column-gap: 29px;
+        grid-row-gap: 84px;
+        margin: 0 auto;
+    }
+    
+    .team > div article:first-child {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    
+    .team > div article:nth-child(2),
+    .team > div article:nth-child(4){
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+    .team > div article:nth-child(3),
+    .team > div article:nth-child(5){
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    
+    .offer > div{
+        text-align: center;
+        padding: 80px 15px 65px;
+    }
+    
+    .offer > div p{
+        margin-bottom: 50px;
+    }
+    
+    .offer > div p,
+    .offer > div a{
+        float: none;
+    }
+    
+    .gallery > div {
+        padding: 94px calc(20px + 50% - 380px);
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(2, 344px);
+        grid-template-rows: minmax(209px, auto) repeat(3, 209px);
+        grid-column-gap: 34px;
+        grid-row-gap: 38px;
+    }
+    
+    .gallery > div div {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    .news > div {
+        grid-template-columns: 35px 5px repeat(2, 335px) 5px 35px;
+        grid-template-rows: repeat(2, minmax(175px, auto)) minmax(420px, auto);
+        grid-column-gap: 10px;
+        grid-row-gap: 55px;
+        width: 800px;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+    
+    .news > div > div.list,
+    .news > div article:first-child,
+    .news > div article:nth-child(2){
+        grid-column-start: 2;
+        grid-column-end: 6;
+        padding: 0;
+    }
+    
+    .news > div div:nth-child(3){
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    
+    .news > div div:nth-child(4){
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+    
+    .news > div .list .header {
+        width: 100%;
+    }
+    
+    .news > div > div:last-child {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        text-align: center;
+    }
+    
+    footer > div{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    footer > div article{
+        text-align: center;
+    }
+    
+    footer > div article:first-child,
+    footer > div article:last-child{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    
+    footer > div article:nth-child(2),
+    footer > div article:nth-child(3){
+        margin-bottom: 40px;
+    }
+    
+    footer > div article:nth-child(2) ul,
+    footer > div article:nth-child(3) ul{
+        width: 50%;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    footer > div article:first-child ul{
+        margin-left: 0;
+    }
+    
+    footer > div article:first-child ul li {
+        margin-bottom: 75px;
+    }
+    
+    footer > div article:first-child ul li:before {
+        top: -45px;
+    }
+    
+    footer > div article:first-child ul li.mail:before {
+        left: calc(50% - 20px);
+        top: -45px;
+    }
+    
+    footer > div article:first-child ul li.phone:before {
+        left: calc(50% - 13.5px);
+        top: -45px;
+    }
+    
+    footer > div article:first-child ul li.address:before {
+        left: calc(50% - 19px);
+        top: -45px;
+    }
+    
+    footer > div article:first-child .socials{
+        display: none;
+    }
+    
+    footer > div form input:not([type="submit"]),
+    footer > div form textarea{
+        width: 100%;
+    }
+}
+
+
+@media all and (min-width: 1200px) and (max-width: 1600px){
+    body > *:before,
+    body > *:after{
+        content: '';
+    }
+    
+    body > *{
+        grid-template-columns: calc(50% - 600px) 1200px;
+    }
+    
+    header > div{
+        padding: 13px 4px 33px;
+        text-align: center;
+    }
+    
+    header > div nav ul,
+    header > div img.logo{
+        float: none;
+    }
+    
+    header > div aside,
+    header > div .socials{ 
+        display: none; 
+    }
+    
+    .cathegories {
+        background: -webkit-linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+        background: -o-linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+        background: linear-gradient(#43b1d2, hsla(200, 61%, 54%, 1) 50%, hsla(190, 56%, 49%, 1) 50%, #37c3a8);
+    }
+    
+    .cathegories > div{
+        grid-template-rows: repeat(2, minmax(360px, auto));
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .rates > div{
+        grid-template-columns: repeat(2, 165px);
+        grid-template-rows: repeat(2, 280px);
+        grid-column-gap: calc(100% - 330px);
+        grid-row-gap: 130px;
+    }
+    
+    .offer > div{
+        text-align: center;
+    }
+    
+    .offer > div p{
+        margin-bottom: 50px;
+    }
+    
+    .offer > div p,
+    .offer > div a{
+        float: none;
+    }
+    
+    .news > div{
+        grid-template-columns: 65px 50px repeat(2, 335px) 50px 65px;
+        grid-template-rows: repeat(2, minmax(175px, auto)) minmax(420px, auto);
+        grid-column-gap: 60px;
+        grid-row-gap: 55px;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+    
+    .news > div > div.list,
+    .news > div article:first-child,
+    .news > div article:nth-child(2){
+        grid-column-start: 2;
+        grid-column-end: 6;
+        padding: 0;
+    }
+    
+    .news > div div:nth-child(3){
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    
+    .news > div div:nth-child(4){
+        grid-column-start: 4;
+        grid-column-end: 5;
+    }
+    
+    .news > div .list .header {
+        width: 100%;
+    }
+    
+    .news > div > div:last-child {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        text-align: center;
+    }
+}
+
+
+@media all and (min-width: 1600px){
+    body > *:before,
+    body > *:after{
+        content: '';
+    }
+    
+    body > *{
+        grid-template-columns: calc(50% - 800px) 1600px;
+    }
+    
+    body > section.reasons{
+        grid-template-columns: calc(50% - 600px) 1200px;
+    }
+    
+    .cathegories > div{
+        grid-template-rows: minmax(360px, auto);
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .rates > div{
+        grid-template-columns: repeat(4, 165px);
+        grid-template-rows: 280px;
+        grid-column-gap: 160px;
+    }
 }
