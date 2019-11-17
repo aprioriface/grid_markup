@@ -41,8 +41,16 @@ header > div aside > *{
     display: inline-block;
     padding: 20px 0 20px 70px;
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: 5px center;
     background-size: 51px 51px;
+    
+    transition: all .25s;
+}
+
+header > div aside > *:hover{
+    background-size: 61px 61px;
+    background-position: 0 center;
+    transition: all .35s;
 }
 
 header > div aside > *:not(:first-child){
@@ -168,6 +176,16 @@ header > div .socials{
     letter-spacing: 0.32px;
     padding: 16px 28px;
     text-decoration: none;
+    display: block;
+    width: 162px;
+    margin: 0 auto;
+    
+    transition: all .25s;
+}
+
+.banner > div article a:hover{
+    transform: scale(1.2, 1.2);
+    background: #37c3a8; 
 }
 
 .banner > div .minilogo{
@@ -199,6 +217,20 @@ header > div .socials{
     text-align: center;
     background-repeat: no-repeat;
     background-position: center 75px;
+    position: relative;
+}
+
+.cathegories > div > article > img{
+    position: absolute;
+    top: 55px;
+    left: calc(50% - 37.5px);
+}
+
+.cathegories > div > article.cath_1:hover > img, 
+.cathegories > div > article.cath_2:hover > img, 
+.cathegories > div > article.cath_3:hover > img, 
+.cathegories > div > article.cath_4:hover > img{
+    animation-name: wobble;
 }
 
 .cathegories > div > article h3{
@@ -220,22 +252,22 @@ header > div .socials{
 
 .cathegories > div > article.cath_1{
     background-color: #43b1d2;
-    background-image: url(../img/cath_1.png);
+    /*background-image: url(../img/cath_1.png);*/
 }
 
 .cathegories > div > article.cath_2{
     background-color: #3fb6c6;
-    background-image: url(../img/cath_2.png);
+    /*background-image: url(../img/cath_2.png);*/
 }
 
 .cathegories > div > article.cath_3{
     background-color: #3cbbbb;
-    background-image: url(../img/cath_3.png);
+    /*background-image: url(../img/cath_3.png);*/
 }
 
 .cathegories > div > article.cath_4{
     background-color: #37c3a8;
-    background-image: url(../img/cath_4.png);
+    /*background-image: url(../img/cath_4.png);*/
 }
 
 
@@ -276,6 +308,12 @@ header > div .socials{
 
 .reasons > div article:not(:first-child){
     padding: 50px 0;
+    
+    transition: all .25s;
+}
+
+.reasons > div article:not(:first-child):hover{
+    transform: scale(1.1, 1.1) translate(0, -5px);
 }
 
 .reasons > div article h3{
@@ -349,6 +387,18 @@ header > div .socials{
     box-sizing: border-box;
     background-position: center top;
     background-repeat: no-repeat;
+    position: relative;
+}
+
+.rates > div article > img{
+    position: absolute;
+    left: calc(50% - 45.5px);
+    top: 20px;
+}
+
+.rates > div article:hover > img{
+    animation-name: bounce;
+    animation-duration: .75s;
 }
 
 .rates > div article h3{
@@ -374,7 +424,7 @@ header > div .socials{
     letter-spacing: -1.52px;
 }
 
-.rates > div article.rates_1{
+/*.rates > div article.rates_1{
     background-image: url(../img/rates_1.png);
 }
 
@@ -388,7 +438,7 @@ header > div .socials{
 
 .rates > div article.rates_4{
     background-image: url(../img/rates_4.png);
-}
+}*/
 
 
 
@@ -474,6 +524,16 @@ header > div .socials{
     letter-spacing: 0.32px;
     border-radius: 25px;
     text-decoration: none;
+    display: block;
+    width: 110px;
+    margin: 0 auto;
+    
+    transition: all .25s;
+}
+
+.news > div > div > a.button:hover{
+    transform: scale(1.2, 1.2);
+    background: #37c3a8; 
 }
 
 .news > div .list .header{
@@ -490,6 +550,14 @@ header > div .socials{
     font-weight: 500;
     position: relative;
     cursor: pointer;
+    
+    transition: all .25s;
+}
+
+.news > div .list .header:not(:first-child):hover{
+    background: #0087be;
+    color: white;
+    transform: translate(10px, 0);
 }
 
 .news > div .list .header:before{
@@ -505,6 +573,13 @@ header > div .socials{
     text-align: center;
     padding-top: 6px;
     box-sizing: border-box;
+    
+    transition: all .25s;
+}
+
+.news > div .list .header:first-child:hover:before{
+    transform: rotateZ(.75turn);
+    padding-left: 4px;
 }
 
 .news > div .list .header.active{
@@ -543,13 +618,13 @@ header > div .socials{
     background-blend-mode: multiply;*/
 }
 
-.gallery > div div{
+.gallery > div div:not(.imagebox){
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
 }
 
-.gallery > div div h3{
+.gallery > div div:not(.imagebox) h3{
     color: #ffffff;
     font-family: Montserrat;
     font-size: 45px;
@@ -557,12 +632,48 @@ header > div .socials{
     margin-bottom: 38px;
 }
 
-.gallery > div div p{
+.gallery > div div:not(.imagebox) p{
     color: #ffffff;
     font-family: "Open Sans";
     font-size: 15px;
     font-weight: 400;
     line-height: 30px;
+}
+
+.gallery > div div.imagebox{
+    perspective: 1000px;
+    position: relative;
+}
+
+.gallery > div div.imagebox > img,
+.gallery > div div.imagebox > div{
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    backface-visibility: hidden;
+}
+
+.gallery > div div.imagebox:hover > img{
+    transform: rotateY(.5turn);
+}
+
+.gallery > div div.imagebox > div{
+    transform: rotateY(.5turn);
+    padding: 47px 20px;
+    box-sizing: border-box;
+    text-align: justify;
+    background: #76bada;
+    color: black;
+    font-weight: bold;
+    font-family: "Open Sans";
+    max-height: 209px;
+    overflow: hidden;
+    font-size: 12px;
+    box-shadow: inset 0 10px 35px 0px rgba(0,00,0,.1);
+}
+
+.gallery > div div.imagebox:hover > div{
+    transform: rotateY(1turn);
 }
 
 
@@ -602,8 +713,66 @@ header > div .socials{
     line-height: 30px;
 }
 
-.team > div article img{
+.team > div article div.registerplate{
+    display: block;
+    width: 279px;
+    height: 279px;
     border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    box-shadow: inset 0 -10px 150px rgba(5, 66, 97, 0);
+
+    transition: all .75s;
+}
+
+.team > div article div.registerplate:hover{
+    background: rgba(0, 125, 183, 1);
+    box-shadow: inset 0 -10px 150px rgba(5, 66, 97, 1);
+}
+
+.team > div article div.registerplate img{
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+
+    transition: all .75s;
+}
+
+.team > div article div.registerplate:hover img{
+    top: -300px;
+    transform: scale(.5, .5);
+}
+
+.team > div article div.registerplate button{
+    box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
+    background-color: #0087be;
+    padding: 15px 26px;
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: block;
+    width: 175px;
+    margin: 0 auto;
+    transition: all .25s;
+    transition-delay: .5s;
+    margin-top: calc(50% - 25px);
+    border: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.team > div article div.registerplate:hover button{
+    transform: scale(1.2, 1.2);
+    background: #37c3a8; 
 }
 
 .team > div article:not(:first-child) h4{
@@ -663,7 +832,17 @@ header > div .socials{
     padding: 19px 32px;
     text-decoration: none;
     border-radius: 31px;
+    margin: 0 auto;
     margin-top: -10px;
+    display: block;
+    width: 130px;
+    
+    transition: all .25s;
+}
+
+.offer > div a:hover{
+    transform: scale(1.2, 1.2);
+    background: #37c3a8; 
 }
 
 
@@ -805,6 +984,14 @@ footer > div form [type="submit"]{
     letter-spacing: 0.32px;
     border: 0;
     border-radius: 20px;
+    outline: 0;
+    
+    transition: all .25s;
+}
+
+footer > div form [type="submit"]:hover{
+    transform: scale(1.2, 1.2) translate(10%, 0);
+    background: #37c3a8; 
 }
 
 .copyright{
@@ -976,7 +1163,7 @@ footer > div form [type="submit"]{
         grid-row-gap: 38px;
     }
     
-    .gallery > div div {
+    .gallery > div div:not(.imagebox) {
         grid-column-start: 1;
         grid-column-end: 3;
     }
@@ -1079,6 +1266,11 @@ footer > div form [type="submit"]{
     footer > div form input:not([type="submit"]),
     footer > div form textarea{
         width: 100%;
+    }
+
+    footer > div form [type="submit"]:hover{
+        transform: scale(1.2, 1.2);
+        background: #37c3a8; 
     }
 }
 
